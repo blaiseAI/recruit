@@ -26,9 +26,11 @@ function submitForm(e) {
     var major = getInputVal("major").value;
     var email = getInputVal("email").value;
     var phone = getInputVal("phone").value;
-
+    var skills = getInputVal("skills").value;
+    var date = new Date();
+    var timeStamp = date.getTime();
     // Save Registration
-    saveRegistration(firstname, lastname, program, major, email, phone);
+    saveRegistration(firstname, lastname, program, major, email, phone, skills, timeStamp);
     // Show Alert
     document.querySelector('.alert').style.display = "flex";
     // Hide alert after 3 sec
@@ -49,7 +51,7 @@ function getInputVal(id) {
 
 
 // save registrations
-function saveRegistration(firstname, lastname, program, major, email, phone) {
+function saveRegistration(firstname, lastname, program, major, email, phone, skills, timeStamp) {
     var newRegistrationRef = registrationsRef.push();
     newRegistrationRef.set({
         firstname: firstname,
@@ -57,43 +59,49 @@ function saveRegistration(firstname, lastname, program, major, email, phone) {
         program: program,
         major: major,
         email: email,
-        phone: phone
+        phone: phone,
+        skills: skills,
+        timeStamp: timeStamp
     });
 
 }
 
-const source = document.querySelector("#project-template").innerHTML;
-const template = Handlebars.compile(source);
-console.log('source');
-
 function gotData(data) {
-    // console.log(data.val());
-    var registrations = data.val();
-    // console.log(registrations);
-    var keys = Object.keys(registrations);
-    for (var i = 0; i < keys.length; i++) {
-        var k = keys[i];
-        var data = registrations[k];
-        console.log(data);
-        var firstname = data.firstname;
-        var lastname = data.lastname;
-        var major = data.major;
-        var email = data.email;
-        console.log(firstname, lastname, major);
-        var tr = document.createElement('tr');
-        // tr.classList.add("table")
-        tr.innerHTML = `
-            <tr>
-                <td>${i+1}</td>
-                <td>${firstname}</td>
-                <td>${lastname}</td>
-                <td>${major}</td>
-                <td>${email}</td>
-            </tr>
-        `;
-        document.querySelector('.candidate').appendChild(tr);
+    try {
+        // console.log(data.val());
+        var registrations = data.val();
+        // console.log(registrations);
+        var keys = Object.keys(registrations);
+        for (var i = 0; i < keys.length; i++) {
+            var k = keys[i];
+            var data = registrations[k];
+            console.log(data);
+            var firstname = data.firstname;
+            var lastname = data.lastname;
+            var major = data.major;
+            var email = data.email;
+            var phone = data.phone;
+            var skills = data.skills;
+            var timeStamp = data.timeStamp;
+            console.log(firstname, lastname, major, timeStamp, skills);
+            var tr = document.createElement('tr');
+            // tr.classList.add("table")
+            tr.innerHTML = `
+        <tr>
+            <td>${i+1}</td>
+            <td>${firstname}</td>
+            <td>${lastname}</td>
+            <td>${major}</td>
+            <td>${email}</td>
+            <td>${phone}</td>
+            <td>${skills}</td>
+        </tr>
+    `;
+            document.querySelector('.candidate').appendChild(tr);
+        }
+    } catch (e) {
+        errorData(e);
     }
-
 }
 
 
