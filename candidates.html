@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Recruit IT Connecions</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/darkmode.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="widgets">
+            <i class="material-icons" id="darkmode">wb_sunny</i>
+        </div>
+        <section class="weather-display">
+            <div class="weather-header">
+                <i class="material-icons" id="darkmode">check_circle</i>
+                <h1>University Recruit Portal</h1>
+            </div>
+
+            <div class="display-hiring">
+                <div class="weather-desc">
+                    <h4>Candidates List</h4>
+                    <p>Simple Recruiting application to help in capturing recruiting prospects from people visiting the companies booth. I stored the candidates info in a Firebase database and this data is accessible as JSON as well.</p>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <div class="widgets d-flex justify-content-start">
+                <a href="index.html">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+            </div>
+            <div class="col-12">
+                <div class="row">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Major</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody class="candidate">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- handlebars -->
+    <script id="project-template" type="text/x-handlebars-template">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Major</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- loop through to display -->
+                {{#each managers}}
+                <tr>
+                    <td> {{ firstname }} </td>
+                    <td> {{ lastname }} </td>
+                    <td> {{ major }}</td>
+                    <td> {{ email }}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
+    <script src="js/main.js "></script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Recruit IT Connecions</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/darkmode.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="theme-color" content="#fafafa" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="widgets">
+            <i class="material-icons" id="darkmode">wb_sunny</i>
+        </div>
+        <section class="weather-display">
+            <div class="weather-header">
+                <i class="material-icons" id="darkmode">check_circle</i>
+                <h1>University Recruit Portal</h1>
+            </div>
+
+            <div class="display-hiring">
+                <div class="weather-desc">
+                    <h4>Candidates Form</h4>
+                    <p>Simple Recruiting application to help in capturing recruiting prospects from people visiting the companies booth. I stored the candidates info in a Firebase database and this data is accessible as JSON as well.</p>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <div class="col-12">
+                <div class="widgets d-flex justify-content-start">
+                    <a href="index.html">
+                        <i class="material-icons">arrow_back</i>
+                    </a>
+                </div>
+                <div class="alert">Registration complete <i class="material-icons" style="color:#79c879;">check_circle</i></div>
+                <form id="registration-form">
+                    <div class="d-flex justify-content-between">
+                        <div class="form-group w-50 mr-5">
+                            <label for="firstname ">First Name</label>
+                            <input type="text" id="firstname" class="form-control " aria-describedby="emailHelp " placeholder="Enter First Name " required>
+                        </div>
+                        <div class="form-group w-50 ">
+                            <label for="lastname ">Last Name</label>
+                            <input type="text" id="lastname" class="form-control " aria-describedby="emailHelp " placeholder="Enter Last Name " required>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="input-group mr-5 ">
+                            <select class="custom-select " id="program">
+                              <option selected>Select...</option>
+                              <option value="Digital Media and IT">Digital Media and IT</option>
+                              <option value="2 ">Two</option>
+                              <option value="3 ">Three</option>
+                            </select>
+                            <div class="input-group-append ">
+                                <label class="input-group-text " for="inputGroupSelect02 ">Program</label>
+                            </div>
+                        </div>
+                        <div class="input-group ">
+                            <select class="custom-select " id="major">
+                              <option selected>Select...</option>
+                              <option value="Software Development">Software Development</option>
+                              <option value="Business Analyst">Business Analyst</option>
+                              <option value="Web Design">Web Design</option>
+                              <option value="System Adminitration">System Adminitration</option>
+                            </select>
+                            <div class="input-group-append ">
+                                <label class="input-group-text " for="inputGroupSelect02 ">Major</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between ">
+                        <div class="form-group mt-2 w-50 mr-5 ">
+                            <label for="exampleInputEmail1 ">Email address</label>
+                            <input type="email " id="email" class="form-control " aria-describedby="emailHelp " placeholder="Enter email " required>
+                            <small id="emailHelp " class="form-text text-muted ">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group mt-2 w-50 ">
+                            <label for="phone">Phone Number</label>
+                            <input type="phone " id="phone" class="form-control " aria-describedby="emailHelp " placeholder="Enter Phone Number ">
+                        </div>
+                    </div>
+                    <button>Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase.js"></script>
+    <script src="js/main.js "></script>
+</body>
+
+</html>
