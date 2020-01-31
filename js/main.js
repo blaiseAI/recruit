@@ -14,6 +14,7 @@ firebase.initializeApp(firebaseConfig);
 var registrationsRef = firebase.database().ref('registrations');
 // retrieving data from Firebase
 registrationsRef.on('value', gotData, errorData);
+
 let listOfRegistrations = [];
 document.getElementById('registration-form').addEventListener('submit', submitForm);
 
@@ -65,6 +66,7 @@ function saveRegistration(firstname, lastname, program, major, email, phone, ski
     });
 
 }
+
 
 function gotData(data) {
     try {
