@@ -1,6 +1,6 @@
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyDxxB6enGLoo_EmRz3Ztbef6jRJaP620Mk",
+    apiKey: "YOUR API KEY",
     authDomain: "naitrecruitform.firebaseapp.com",
     databaseURL: "https://naitrecruitform.firebaseio.com",
     projectId: "naitrecruitform",
